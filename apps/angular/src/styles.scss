@@ -15,3 +15,29 @@
   box-sizing: border-box;
 }
 
+#container {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  gap: 10px;
+}
+
+.item {
+  width: 100px;
+  height: 100px;
+  background-color: lightgray;
+  border: 1px solid #ccc;
+  text-align: center;
+  line-height: 100px;
+  user-select: none;
+}
+
+.item.selected {
+  background-color: lightblue;
+  border-color: blue;
+}
+.selection-area {
+  position: fixed;
+  border: 2px dashed blue;
+  background-color: rgba(0, 0, 255, 0.1);
+  pointer-events: none;
+}
