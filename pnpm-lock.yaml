@@ -38,6 +38,21 @@ importers:
       '@angular/ssr':
         specifier: ~19.0.0
         version: 19.0.6(whst2uom2sykn2ay52lywk7vqm)
+      '@fontsource/work-sans':
+        specifier: latest
+        version: 5.1.1
+      '@sao-components/core':
+        specifier: 0.0.1-beta.41
+        version: 0.0.1-beta.41(@sao-icons/core@0.0.6)(@sao-palette/core@0.0.11)(@sao-typography/core@0.0.5(@fontsource/work-sans@5.1.1))
+      '@sao-icons/core':
+        specifier: ^0.0.6
+        version: 0.0.6
+      '@sao-palette/core':
+        specifier: ^0.0.11
+        version: 0.0.11
+      '@sao-typography/core':
+        specifier: ^0.0.5
+        version: 0.0.5(@fontsource/work-sans@5.1.1)
       express:
         specifier: ~4.18.2
         version: 4.18.3
@@ -1347,6 +1362,9 @@ packages:
     resolution: {integrity: sha512-zSkKow6H5Kdm0ZUQUB2kV5JIXqoG0+uH5YADhaEHswm664N9Db8dXSi0nMJpacpMf+MyyglF1vnZohpEg5yUtg==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
+  '@fontsource/work-sans@5.1.1':
+    resolution: {integrity: sha512-fKxyO68szc0pg1GMVP87lVwfDAU/Ku3gjJK5G8TonOjSQAyQjcHlnC7HENeyIgboC/+hocGklSnMYmldjyAJtw==}
+
   '@humanfs/core@0.19.1':
     resolution: {integrity: sha512-5DyQ4+1JEUzejeK1JGICcideyfUbGixgS9jNgex5nqkW+cY7WZhxBigmieN5Qnw9ZosSNVC9KQKyb+GUaGyKUA==}
     engines: {node: '>=18.18.0'}
@@ -2269,6 +2287,24 @@ packages:
   '@rspack/lite-tapable@1.0.1':
     resolution: {integrity: sha512-VynGOEsVw2s8TAlLf/uESfrgfrq2+rcXB1muPJYBWbsm1Oa6r5qVQhjA5ggM6z/coYPrsVMgovl3Ff7Q7OCp1w==}
     engines: {node: '>=16.0.0'}
+
+  '@sao-components/core@0.0.1-beta.41':
+    resolution: {integrity: sha512-AroFiHcUg7C7faFytjau1ssX27YG+TgpXQKTnGsYE7iTcYIbk2F9ON2gTSoPF/Db/CSyZAPrcTp+4DEmQ5d5bA==}
+    peerDependencies:
+      '@sao-icons/core': latest
+      '@sao-palette/core': latest
+      '@sao-typography/core': latest
+
+  '@sao-icons/core@0.0.6':
+    resolution: {integrity: sha512-LBWyB+xM6PP5VAMZW8NeH/lr3Uh8WQQFZoQvnZzPuWD458BFQTMaQrWhikIGPcHqqMWcBY6LW583jEIeZefkQQ==}
+
+  '@sao-palette/core@0.0.11':
+    resolution: {integrity: sha512-f43akKRiP9kOrTE68amb5JHyEvNqG0kxeUpqLjNC73/ekXXUhpiYOSvY6z+h9+P31STKQyJdgT9ApLmTJZVaag==}
+
+  '@sao-typography/core@0.0.5':
+    resolution: {integrity: sha512-/hz5DQhu6vAOwayOYzNSfFOG6BQzYKydURdLeEFzAc7aGR0CayDs06Tmd8HQN26s3FmFae3pQ4uFhbJw/fMcog==}
+    peerDependencies:
+      '@fontsource/work-sans': latest
 
   '@schematics/angular@19.0.6':
     resolution: {integrity: sha512-HicclmbW/+mlljU7a4PzbyIWG+7tognoL5LsgMFJQUDzJXHNjRt1riL0vk57o8Pcprnz9FheeWZXO1KRhXkQuw==}
@@ -6862,7 +6898,7 @@ snapshots:
       typescript: 5.6.3
       webpack: 5.96.1(@swc/core@1.5.29(@swc/helpers@0.5.15))(esbuild@0.24.0)
       webpack-dev-middleware: 7.4.2(webpack@5.96.1(@swc/core@1.5.29(@swc/helpers@0.5.15))(esbuild@0.24.0))
-      webpack-dev-server: 5.1.0(webpack@5.97.1(@swc/core@1.5.29(@swc/helpers@0.5.15)))
+      webpack-dev-server: 5.1.0(webpack@5.88.0(@swc/core@1.5.29(@swc/helpers@0.5.15)))
       webpack-merge: 6.0.1
       webpack-subresource-integrity: 5.1.0(webpack@5.96.1(@swc/core@1.5.29(@swc/helpers@0.5.15))(esbuild@0.24.0))
     optionalDependencies:
@@ -6896,7 +6932,7 @@ snapshots:
       '@angular-devkit/architect': 0.1900.6(chokidar@4.0.3)
       rxjs: 7.8.1
       webpack: 5.96.1(@swc/core@1.5.29(@swc/helpers@0.5.15))(esbuild@0.24.0)
-      webpack-dev-server: 5.1.0(webpack@5.97.1(@swc/core@1.5.29(@swc/helpers@0.5.15)))
+      webpack-dev-server: 5.1.0(webpack@5.88.0(@swc/core@1.5.29(@swc/helpers@0.5.15)))
     transitivePeerDependencies:
       - chokidar
 
@@ -8123,6 +8159,8 @@ snapshots:
   '@eslint/plugin-kit@0.2.4':
     dependencies:
       levn: 0.4.1
+
+  '@fontsource/work-sans@5.1.1': {}
 
   '@humanfs/core@0.19.1': {}
 
@@ -9378,6 +9416,20 @@ snapshots:
       '@swc/helpers': 0.5.15
 
   '@rspack/lite-tapable@1.0.1': {}
+
+  '@sao-components/core@0.0.1-beta.41(@sao-icons/core@0.0.6)(@sao-palette/core@0.0.11)(@sao-typography/core@0.0.5(@fontsource/work-sans@5.1.1))':
+    dependencies:
+      '@sao-icons/core': 0.0.6
+      '@sao-palette/core': 0.0.11
+      '@sao-typography/core': 0.0.5(@fontsource/work-sans@5.1.1)
+
+  '@sao-icons/core@0.0.6': {}
+
+  '@sao-palette/core@0.0.11': {}
+
+  '@sao-typography/core@0.0.5(@fontsource/work-sans@5.1.1)':
+    dependencies:
+      '@fontsource/work-sans': 5.1.1
 
   '@schematics/angular@19.0.6(chokidar@4.0.3)':
     dependencies:
@@ -14304,6 +14356,17 @@ snapshots:
 
   webidl-conversions@7.0.0: {}
 
+  webpack-dev-middleware@7.4.2(webpack@5.88.0(@swc/core@1.5.29(@swc/helpers@0.5.15))):
+    dependencies:
+      colorette: 2.0.20
+      memfs: 4.15.1
+      mime-types: 2.1.35
+      on-finished: 2.4.1
+      range-parser: 1.2.1
+      schema-utils: 4.3.0
+    optionalDependencies:
+      webpack: 5.88.0(@swc/core@1.5.29(@swc/helpers@0.5.15))
+
   webpack-dev-middleware@7.4.2(webpack@5.96.1(@swc/core@1.5.29(@swc/helpers@0.5.15))(esbuild@0.24.0)):
     dependencies:
       colorette: 2.0.20
@@ -14326,7 +14389,7 @@ snapshots:
     optionalDependencies:
       webpack: 5.97.1(@swc/core@1.5.29(@swc/helpers@0.5.15))
 
-  webpack-dev-server@5.1.0(webpack@5.97.1(@swc/core@1.5.29(@swc/helpers@0.5.15))):
+  webpack-dev-server@5.1.0(webpack@5.88.0(@swc/core@1.5.29(@swc/helpers@0.5.15))):
     dependencies:
       '@types/bonjour': 3.5.13
       '@types/connect-history-api-fallback': 1.5.4
@@ -14354,10 +14417,10 @@ snapshots:
       serve-index: 1.9.1
       sockjs: 0.3.24
       spdy: 4.0.2
-      webpack-dev-middleware: 7.4.2(webpack@5.97.1(@swc/core@1.5.29(@swc/helpers@0.5.15)))
+      webpack-dev-middleware: 7.4.2(webpack@5.88.0(@swc/core@1.5.29(@swc/helpers@0.5.15)))
       ws: 8.18.0
     optionalDependencies:
-      webpack: 5.97.1(@swc/core@1.5.29(@swc/helpers@0.5.15))
+      webpack: 5.88.0(@swc/core@1.5.29(@swc/helpers@0.5.15))
     transitivePeerDependencies:
       - bufferutil
       - debug

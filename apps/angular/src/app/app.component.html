@@ -1,2 +1,1611 @@
-<app-nx-welcome></app-nx-welcome>
-<router-outlet></router-outlet>
+<div
+  style="
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100vw;
+    min-height: max-content;
+    max-height: 100vh;
+    padding: 24px;
+    align-items: center;
+    justify-content: center;
+    background: var(--sao-palette-color-branding-background-900);
+    overflow: auto;
+  "
+>
+
+  <article class="sao-card">
+    <header>
+      <aside>
+        <img
+          src="https://avatars.githubusercontent.com/u/49849883?v=4"
+          alt="avatar"
+        />
+        <label>
+          <h6>Dang Vinh</h6>
+          <p>Frontend Developer</p>
+        </label>
+      </aside>
+      <i class="sao-icon sao-icon-filtered-action-3d-rotation"></i>
+    </header>
+    <img src="img.png" alt="placeholder" />
+    <main>
+      <h2>Title placeholder</h2>
+      <p>
+        Placeholder for card text. Enter text into this container to describe
+        the card feature.
+      </p>
+    </main>
+    <footer>
+      <button class="sao-button sao-button--default sao-button--primary">
+        <i class="sao-icon sao-icon-filtered-action-3d-rotation"></i>
+        Button
+      </button>
+      <button class="sao-button sao-button--default sao-button--success">
+        <i class="sao-icon sao-icon-filtered-action-3d-rotation"></i>
+        Button
+      </button>
+    </footer>
+  </article>
+  <span class="sao-carousel--vertical">
+    @for (index of [0, 1, 2, 3, 4]; track index) {
+      <span
+        [class.active]="index === activeSignal()"
+        (click)="activeSignal.set(index)"
+      ></span>
+    }
+  </span>
+  <span class="sao-carousel--horizontal">
+    @for (index of [0, 1, 2, 3, 4]; track index) {
+      <span
+        [class.active]="index === activeSignal()"
+        (click)="activeSignal.set(index)"
+      ></span>
+    }
+  </span>
+  <section class="sao-accordion-group">
+    @for (index of [0, 1, 2, 3, 4]; track index) {
+      <article class="sao-accordion" [class.active]="index === activeSignal()" (click)="activeSignal.set(index)">
+        <header>
+          <h6>Accordion {{ index }}</h6>
+        </header>
+        <main>
+          <p style="margin: 0">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+            tristique, leo in pharetra ultrices, lorem nisl aliquam erat, sed
+            vulputate sapien nisl et augue. Nullam quis quam vel nibh tincidunt
+            ultricies. Donec eget lacus in augue semper cursus. Nullam
+            consectetur, leo in pharetra ultrices, lorem nisl aliquam erat, sed
+            vulputate sapien nisl et augue. Donec eget lacus in augue semper
+            cursus. Nullam consectetur, leo in pharetra ultrices, lorem nisl
+            aliquam erat, sed vulputate sapien nisl et augue. Donec eget lacus in
+            augue semper cursus. Nullam consectet
+          </p>
+        </main>
+      </article>
+    }
+  </section>
+  @for (color of ['purple', 'ocean-blue', 'dark-green', 'charcoal', 'future-blue']; track color) {
+    <article class="sao-master-card sao-master-card--large sao-master-card--{{color}}">
+      <header>
+        <img src="logo.svg" alt="Logo" />
+      </header>
+      <main>
+        <aside>
+          <label>
+            <h6>Dang Vinh</h6>
+            <span>5242 **** **** 4878</span>
+          </label>
+          <span>08/24</span>
+        </aside>
+        <i class="sao-icon sao-icon-filtered-action-3d-rotation"></i>
+      </main>
+    </article>
+    <article class="sao-master-card sao-master-card--small sao-master-card--{{color}}">
+      <header>
+        <img
+          src='data:image/svg+xml,<svg width="62" height="24" viewBox="0 0 89 54" fill="none" xmlns="http://www.w3.org/2000/svg"><g filter="url(%23filter0_d_18_20250)"><path fill-rule="evenodd" clip-rule="evenodd" d="M24.8628 23.7749L14.6649 17.1912C14.6649 17.1912 13.3858 16.4623 13.093 15.1038C12.6818 13.1965 14.0377 11.5615 14.0377 11.5615L27.273 20.1088C28.294 20.7688 28.5728 22.1186 27.9164 23.1369C27.2423 24.1827 25.8568 24.4136 24.8628 23.7749Z" fill="%2338D200"/><path fill-rule="evenodd" clip-rule="evenodd" d="M15.2033 10.1505C15.2033 10.1505 13.6412 9.21518 13.6412 7.05186C13.6412 4.89575 15.2027 3.97228 15.2027 3.97228L20.7779 0.35373C21.7997 -0.304915 23.1665 -0.0174165 23.8307 0.995806C24.4949 2.00903 24.205 3.36436 23.1832 4.023L18.4843 7.05721L26.4906 12.2276C26.4906 12.2276 27.9317 13.0466 28.2156 14.4286C28.6119 16.3568 27.2735 17.9454 27.2735 17.9454L15.2033 10.1505Z" fill="%230473EA"/><path fill-rule="evenodd" clip-rule="evenodd" d="M25.6973 4.90109C25.1737 4.9012 24.8012 5.06483 24.4378 5.29943L21.716 7.05725L24.4378 8.81499C24.8048 9.0493 25.1898 9.21335 25.6973 9.21335C26.8982 9.21335 27.8717 8.24804 27.8717 7.05723C27.8717 5.86642 26.8982 4.90085 25.6973 4.90109Z" fill="%2338D200"/><path fill-rule="evenodd" clip-rule="evenodd" d="M15.1743 24.1237C15.6979 24.1236 16.0704 23.96 16.4338 23.7254L19.1556 21.9676L16.4338 20.2098C16.0669 19.9756 15.6818 19.8115 15.1743 19.8115C13.9735 19.8115 13 20.7768 13 21.9676C13 23.1584 13.9735 24.124 15.1743 24.1237Z" fill="%230473EA"/><path fill-rule="evenodd" clip-rule="evenodd" d="M74.2445 12.3707L75.0445 12.8553V18.65H74.2445V17.8314C73.8544 18.4021 73.23 18.7504 72.4788 18.7504C71.074 18.7504 70.0692 17.7153 70.0692 16.3029C70.0692 14.8615 71.074 13.8071 72.4788 13.8071C73.23 13.8071 73.8544 14.1651 74.2445 14.7455V12.3707ZM53.8587 12.3685L54.6489 12.8528V17.065C54.6489 17.7325 55.0586 17.9937 55.5757 17.9937C55.9659 17.9937 56.3561 17.8873 56.6976 17.6454V18.4097C56.3659 18.6515 55.9073 18.7482 55.5074 18.7482C54.483 18.7482 53.8587 18.2935 53.8587 17.0069V12.3685ZM67.2378 13.7941C68.623 13.7941 69.5302 14.8099 69.5302 16.1739C69.5302 16.3093 69.5205 16.4447 69.501 16.5705H65.7062C65.8232 17.4315 66.5061 18.0022 67.4621 18.0022C68.0767 18.0022 68.6718 17.8281 69.1791 17.4702V18.2247C68.662 18.573 68.0767 18.7374 67.4621 18.7374C65.95 18.7374 64.8672 17.77 64.8672 16.3093C64.8672 14.8776 65.7841 13.7941 67.2377 13.7941H67.2378ZM46.9272 13.7941C47.6784 13.7941 48.2929 14.1424 48.6929 14.7132V13.8812H49.4928V18.6504H48.6929V17.8378C48.2929 18.3989 47.6784 18.7374 46.9272 18.7374C45.5223 18.7374 44.5176 17.7023 44.5176 16.29C44.5176 14.8486 45.5223 13.7941 46.9272 13.7941V13.7941ZM37.0059 13.7941C37.5814 13.7941 38.118 13.9586 38.5473 14.2778V15.1581C38.1667 14.7519 37.64 14.539 37.0546 14.539C36.0303 14.539 35.3084 15.2452 35.3084 16.261C35.3084 17.2767 36.0401 17.9925 37.0645 17.9925C37.64 17.9925 38.1766 17.8377 38.596 17.4798V18.2827C38.1277 18.602 37.5717 18.7374 36.9864 18.7374C35.5133 18.7374 34.489 17.7217 34.489 16.261C34.489 14.8099 35.5425 13.7941 37.0059 13.7941ZM59.1018 13.7941C60.487 13.7941 61.3943 14.8099 61.3943 16.1739C61.3943 16.3093 61.3845 16.4447 61.365 16.5705H57.5702C57.6872 17.4315 58.3701 18.0022 59.3261 18.0022C59.9407 18.0022 60.5358 17.8281 61.0431 17.4702V18.2247C60.5261 18.573 59.9407 18.7374 59.3261 18.7374C57.814 18.7374 56.7312 17.77 56.7312 16.3093C56.7312 14.8776 57.6482 13.7941 59.1018 13.7941ZM39.474 12.3694L40.2641 12.8537L40.2642 14.6938C40.6251 14.1424 41.2007 13.7941 41.9323 13.7941C43.142 13.7941 43.7859 14.6744 43.7859 15.845V18.6504H42.9859V15.9804C42.9859 15.0517 42.5762 14.5584 41.7372 14.5584C40.8495 14.5584 40.2642 15.3129 40.2642 16.261V18.6504H39.474V12.3694ZM53.2681 13.7941V14.6938C52.3121 14.5584 51.5122 15.1968 51.5122 16.377V18.6504H50.7219V13.8812H51.5122V14.8969C51.8926 14.1907 52.5072 13.7941 53.2681 13.7941ZM64.8086 13.7941V14.6938C63.8526 14.5584 63.0526 15.1968 63.0526 16.377V18.6504H62.2624V13.8812H63.0526V14.8969C63.433 14.1907 64.0477 13.7941 64.8086 13.7941ZM72.5569 14.552C71.5814 14.552 70.8887 15.2871 70.8887 16.2932C70.8887 17.2799 71.5814 18.0055 72.5569 18.0055C73.5422 18.0055 74.2445 17.2799 74.2445 16.2932C74.2445 15.2871 73.5422 14.552 72.5569 14.552ZM47.0053 14.539C46.0297 14.539 45.337 15.2742 45.337 16.2803C45.337 17.267 46.0297 17.9925 47.0053 17.9925C47.9905 17.9925 48.6929 17.267 48.6929 16.2803C48.6929 15.2742 47.9905 14.539 47.0053 14.539ZM59.1115 14.5197C58.2336 14.5197 57.7068 15.1291 57.5799 15.932H60.5554C60.4773 15.1194 59.9602 14.5197 59.1115 14.5197ZM67.2475 14.5197C66.3696 14.5197 65.8427 15.1291 65.7159 15.932H68.6914C68.6133 15.1194 68.0962 14.5197 67.2475 14.5197ZM55.2627 13.8133C55.4657 13.6854 55.7254 13.6876 55.9261 13.819L56.7221 14.3442L55.9362 14.844C55.736 14.9714 55.4793 14.9717 55.2787 14.8448L55.2619 14.8342C54.8853 14.5961 54.8858 14.0507 55.2627 13.8132L55.2627 13.8133ZM44.1176 6.82004C44.8688 6.82004 45.4834 7.1683 45.8833 7.73907V6.9071H46.6833V11.6763H45.8833V10.8637C45.4834 11.4248 44.8688 11.7633 44.1176 11.7633C42.7128 11.7633 41.708 10.7282 41.708 9.31587C41.708 7.87449 42.7128 6.82004 44.1176 6.82004ZM39.4155 5.37912V10.0801C39.4155 10.7476 39.8253 11.0088 40.3423 11.0088C40.7326 11.0088 41.1227 10.9024 41.4642 10.6605V11.4248C41.1326 11.6666 40.674 11.7633 40.274 11.7633C39.2497 11.7633 38.6253 11.3087 38.6253 10.0221V5.86392L39.4155 5.37912ZM72.5646 5.37946V11.6763H71.7646V10.8443C71.3745 11.4151 70.7502 11.7633 69.999 11.7633C68.5941 11.7633 67.5894 10.7282 67.5894 9.31587C67.5894 7.87449 68.5941 6.82004 69.999 6.82004C70.7502 6.82004 71.3745 7.17801 71.7646 7.75842V5.86367L72.5646 5.37946ZM61.1994 6.82004C61.9506 6.82004 62.5651 7.1683 62.9651 7.73907V6.9071H63.765V11.6763H62.9651V10.8637C62.5651 11.4248 61.9506 11.7633 61.1994 11.7633C59.7946 11.7633 58.7898 10.7282 58.7898 9.31587C58.7898 7.87449 59.7946 6.82004 61.1994 6.82004ZM36.2157 6.82004C36.7815 6.82004 37.3083 6.97482 37.679 7.25539V8.07762C37.2401 7.69071 36.7034 7.46823 36.2255 7.46823C35.7181 7.46823 35.3572 7.70036 35.3572 8.08734C35.3572 8.37753 35.4938 8.55168 35.8743 8.69675L37.0157 9.15144C37.6302 9.41263 37.9132 9.78022 37.9132 10.2929C37.9132 11.2023 37.1717 11.7633 36.1279 11.7633C35.4938 11.7633 34.9182 11.5892 34.4987 11.2796V10.4284C35.006 10.9024 35.5718 11.1152 36.1377 11.1152C36.7034 11.1152 37.1132 10.8734 37.1132 10.438C37.1132 10.1768 36.9767 9.9737 36.6157 9.82857L35.4743 9.37392C34.889 9.12244 34.5671 8.79353 34.5671 8.1744C34.5671 7.34245 35.2402 6.82004 36.2157 6.82004ZM57.9312 5.37946V11.6763H57.1313V10.8443C56.7411 11.4151 56.1168 11.7633 55.3656 11.7633C53.9608 11.7633 52.956 10.7282 52.956 9.31587C52.956 7.87449 53.9608 6.82004 55.3656 6.82004C56.1168 6.82004 56.7411 7.17801 57.1313 7.75842V5.86367L57.9312 5.37946ZM67.5403 6.82004V7.7197C66.5843 7.58429 65.7844 8.22276 65.7844 9.40293V11.6763H64.9941V6.9071H65.7844V7.92285C66.1648 7.21666 66.7794 6.82004 67.5403 6.82004ZM50.3707 6.82004C51.5804 6.82004 52.2243 7.70036 52.2243 8.87089V11.6763H51.4243V9.0063C51.4243 8.07764 51.0147 7.58429 50.1757 7.58429C49.2879 7.58429 48.7026 8.33883 48.7026 9.28687V11.6763H47.9124V6.9071H48.7026V7.7197C49.0635 7.16829 49.6391 6.82004 50.3707 6.82004ZM44.1957 7.56492C43.2201 7.56492 42.5274 8.30014 42.5274 9.30622C42.5274 10.2929 43.2201 11.0184 44.1957 11.0184C45.181 11.0184 45.8833 10.2929 45.8833 9.30622C45.8833 8.30014 45.181 7.56492 44.1957 7.56492ZM55.4437 7.56492C54.4681 7.56492 53.7754 8.30014 53.7754 9.30622C53.7754 10.2929 54.4681 11.0184 55.4437 11.0184C56.429 11.0184 57.1313 10.2929 57.1313 9.30622C57.1313 8.30014 56.429 7.56492 55.4437 7.56492ZM70.077 7.56492C69.1015 7.56492 68.4088 8.30014 68.4088 9.30622C68.4088 10.2929 69.1015 11.0184 70.077 11.0184C71.0623 11.0184 71.7646 10.2929 71.7646 9.30622C71.7646 8.30014 71.0623 7.56492 70.077 7.56492ZM61.2775 7.56492C60.3019 7.56492 59.6092 8.30014 59.6092 9.30622C59.6092 10.2929 60.3019 11.0184 61.2775 11.0184C62.2627 11.0184 62.9651 10.2929 62.9651 9.30622C62.9651 8.30014 62.2627 7.56492 61.2775 7.56492ZM40.517 6.89845C40.7169 6.77064 40.9736 6.76969 41.1745 6.89609L41.1914 6.90669C41.5685 7.1439 41.5693 7.68928 41.1929 7.92763C40.9903 8.05598 40.7305 8.05434 40.5295 7.92346L39.7323 7.4001L40.517 6.89845Z" fill="white"/></g><defs><filter id="filter0_d_18_20250" x="0" y="-6.10352e-05" width="88.0445" height="53.1295" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/><feOffset dy="16"/><feGaussianBlur stdDeviation="6.5"/><feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.03 0"/><feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_18_20250"/><feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_18_20250" result="shape"/></filter></defs></svg>'
+          alt="Logo" />
+      </header>
+      <main>
+        <aside>
+          <label>
+            <h6>Dang Vinh</h6>
+            <span>5242 ****</span>
+          </label>
+        </aside>
+      </main>
+    </article>
+  }
+  <div
+    style="
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    "
+  >
+    <i class="sao-icon sao-icon-filtered-action-3d-rotation"></i>
+    <span class="sao-avatar sao-avatar--l sao-avatar--online">
+    <img
+      src="https://avatars.githubusercontent.com/u/49849883?v=4"
+      alt="avatar"
+    />
+  </span>
+    <span class="sao-badge-dot sao-badge-dot--blue"></span>
+    <span class="sao-badge-status sao-badge-status--success">Success</span>
+    <span class="sao-badge-text sao-badge-text--small sao-badge-text--solid--blue"
+    >Warning</span
+    >
+    <span class="sao-badge-count sao-badge-count--green">99+</span>
+    <button class="sao-button sao-button--default sao-button--primary">
+      <i class="sao-icon sao-icon-filtered-action-3d-rotation"></i>
+      Button
+    </button>
+
+    <button class="sao-button sao-button--default sao-button--success">
+      <i class="sao-icon sao-icon-filtered-action-3d-rotation"></i>
+      Button
+    </button>
+
+    <button class="sao-button sao-button--default sao-button--error">
+      <i class="sao-icon sao-icon-filtered-action-3d-rotation"></i>
+      Button
+    </button>
+
+    <button class="sao-button sao-button--default sao-button--secondary">
+      <i class="sao-icon sao-icon-filtered-action-3d-rotation"></i>
+      Button
+    </button>
+
+    <button class="sao-button sao-button--default sao-button--tertiary">
+      <i class="sao-icon sao-icon-filtered-action-3d-rotation"></i>
+      Button
+    </button>
+
+    <button class="sao-button sao-button--default sao-button--ghost">
+      <i class="sao-icon sao-icon-filtered-action-3d-rotation"></i>
+      Button
+    </button>
+    <a class="sao-link">Link action</a>
+    @for (color of ['neutral', 'info', 'moved', 'new', 'removed', 'success']; track color) {
+      <span class="sao-lozenges sao-lozenges--bold sao-lozenges--{{color}}">Label</span>
+      <span class="sao-lozenges sao-lozenges--not-bold sao-lozenges--{{color}}">Label</span>
+    }
+    <ul class="sao-breadcrumb sao-breadcrumb--arrow">
+      <li>
+        <i class="sao-icon sao-icon-filtered-action-3d-rotation"></i>
+        Home
+      </li>
+      <li>
+        About
+        <i class="sao-icon sao-icon-filtered-action-3d-rotation"></i>
+      </li>
+      <li>
+        <i class="sao-icon sao-icon-filtered-action-3d-rotation"></i>
+        Contact
+      </li>
+    </ul>
+    <section class="sao-pagination">
+      <main>
+        <div>
+          <span>Items per page:</span>
+          <button>
+            100
+            <i class="sao-icon sao-icon-filtered-hardware-keyboard-arrow-down"></i>
+          </button>
+        </div>
+        <span>1 – 100 of 1,228 items</span>
+      </main>
+      <aside>
+        <div>
+          <button>
+            12
+            <i class="sao-icon sao-icon-filtered-hardware-keyboard-arrow-down"></i>
+          </button>
+          <span>of 40 pages</span>
+        </div>
+        <div>
+          <button>
+            <i class="sao-icon sao-icon-filtered-navigation-arrow-left"></i>
+          </button>
+          <button>
+            <i class="sao-icon sao-icon-filtered-navigation-arrow-right"></i>
+          </button>
+        </div>
+      </aside>
+    </section>
+  </div>
+  <div class="sao-progress-bar sao-progress-bar--default sao-progress-bar--horizontal"
+       style="--sao-progress-bar-percentage: 25%;">
+    <span></span>
+    <span>25%</span>
+  </div>
+  <svg class="sao-progress-circle sao-progress-circle--xsmall" style="--sao-progress-percentage: 25;">
+    <circle [attr.cx]="60 / 2" [attr.cy]="60 / 2" [attr.r]="(60 / 2) - (60 / 20)" />
+    <circle [attr.cx]="60 / 2" [attr.cy]="60 / 2" [attr.r]="(60 / 2) - (60 / 20)" />
+    <text [attr.x]="60 / 2" [attr.y]="60 / 2" text-anchor="middle" dominant-baseline="middle">25%</text>
+  </svg>
+  <svg class="sao-progress-circle sao-progress-circle--small" style="--sao-progress-percentage: 25;">
+    <circle [attr.cx]="120 / 2" [attr.cy]="120 / 2" [attr.r]="(120 / 2) - (120 / 20)" />
+    <circle [attr.cx]="120 / 2" [attr.cy]="120 / 2" [attr.r]="(120 / 2) - (120 / 20)" />
+    <text [attr.x]="120 / 2" [attr.y]="120 / 2" text-anchor="middle" dominant-baseline="middle">25%</text>
+  </svg>
+  <svg class="sao-progress-circle sao-progress-circle--medium" style="--sao-progress-percentage: 25;">
+    <circle [attr.cx]="144 / 2" [attr.cy]="144 / 2" [attr.r]="(144 / 2) - (144 / 20)" />
+    <circle [attr.cx]="144 / 2" [attr.cy]="144 / 2" [attr.r]="(144 / 2) - (144 / 20)" />
+    <text [attr.x]="144 / 2" [attr.y]="144 / 2" text-anchor="middle" dominant-baseline="middle">25%</text>
+  </svg>
+  <svg class="sao-progress-circle sao-progress-circle--large" style="--sao-progress-percentage: 25;">
+    <circle [attr.cx]="220 / 2" [attr.cy]="220 / 2" [attr.r]="(220 / 2) - (220 / 20)" />
+    <circle [attr.cx]="220 / 2" [attr.cy]="220 / 2" [attr.r]="(220 / 2) - (220 / 20)" />
+    <text [attr.x]="220 / 2" [attr.y]="220 / 2" text-anchor="middle" dominant-baseline="middle">25%</text>
+  </svg>
+  <svg class="sao-progress-circle sao-progress-circle--xlarge" style="--sao-progress-percentage: 25;">
+    <circle [attr.cx]="260 / 2" [attr.cy]="260 / 2" [attr.r]="(260 / 2) - (260 / 20)" />
+    <circle [attr.cx]="260 / 2" [attr.cy]="260 / 2" [attr.r]="(260 / 2) - (260 / 20)" />
+    <text [attr.x]="260 / 2" [attr.y]="260 / 2" text-anchor="middle" dominant-baseline="middle">25%</text>
+  </svg>
+  <table class="sao-table sao-table--bordered sao-table--hoverable">
+    <thead>
+    <tr>
+      <th>
+        <div class="sao-table-header">
+          <span>Name</span>
+          <i class="sao-icon sao-icon-filtered-action-3d-rotation"></i>
+        </div>
+      </th>
+      <th>
+        <div class="sao-table-header">
+          <span>Age</span>
+          <i class="sao-icon sao-icon-filtered-action-3d-rotation"></i>
+        </div>
+      </th>
+      <th>
+        <div class="sao-table-header">
+          <span>Gender</span>
+          <i class="sao-icon sao-icon-filtered-action-3d-rotation"></i>
+        </div>
+      </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>John</td>
+      <td>25</td>
+      <td>Male</td>
+    </tr>
+    <tr>
+      <td>Jane</td>
+      <td>30</td>
+      <td>Female</td>
+    </tr>
+    </tbody>
+  </table>
+  <div style="display: flex; align-items: center; gap: 8px">
+    <div class="sao-tab sao-tab--fill sao-tab--default">
+      <span>Tab</span>
+      <i class="sao-icon sao-icon-filtered-action-3d-rotation"></i>
+    </div>
+    <div class="sao-tab sao-tab--fill sao-tab--default active">
+      <span>Tab</span>
+      <i class="sao-icon sao-icon-filtered-action-3d-rotation"></i>
+    </div>
+    <div class="sao-tab sao-tab--fill sao-tab--default disabled">
+      <span>Tab</span>
+      <i class="sao-icon sao-icon-filtered-action-3d-rotation"></i>
+    </div>
+  </div>
+
+  <div style="display: flex; align-items: center; gap: 8px">
+    <div class="sao-tab sao-tab--fill sao-tab--large">
+      <span>Tab</span>
+      <i class="sao-icon sao-icon-filtered-action-3d-rotation"></i>
+    </div>
+    <div class="sao-tab sao-tab--fill sao-tab--large active">
+      <span>Tab</span>
+      <i class="sao-icon sao-icon-filtered-action-3d-rotation"></i>
+    </div>
+    <div class="sao-tab sao-tab--fill sao-tab--large disabled">
+      <span>Tab</span>
+      <i class="sao-icon sao-icon-filtered-action-3d-rotation"></i>
+    </div>
+  </div>
+
+  <div style="display: flex; align-items: center; gap: 8px">
+    <div class="sao-tab sao-tab--line sao-tab--default">
+      <span>Tab</span>
+      <i class="sao-icon sao-icon-filtered-action-3d-rotation"></i>
+    </div>
+    <div class="sao-tab sao-tab--line sao-tab--default active">
+      <span>Tab</span>
+      <i class="sao-icon sao-icon-filtered-action-3d-rotation"></i>
+    </div>
+    <div class="sao-tab sao-tab--line sao-tab--default disabled">
+      <span>Tab</span>
+      <i class="sao-icon sao-icon-filtered-action-3d-rotation"></i>
+    </div>
+  </div>
+
+  <div style="display: flex; align-items: center; gap: 8px">
+    <div class="sao-tab sao-tab--line sao-tab--large">
+      <span>Tab</span>
+      <i class="sao-icon sao-icon-filtered-action-3d-rotation"></i>
+    </div>
+    <div class="sao-tab sao-tab--line sao-tab--large active">
+      <span>Tab</span>
+      <i class="sao-icon sao-icon-filtered-action-3d-rotation"></i>
+    </div>
+    <div class="sao-tab sao-tab--line sao-tab--large disabled">
+      <span>Tab</span>
+      <i class="sao-icon sao-icon-filtered-action-3d-rotation"></i>
+    </div>
+  </div>
+  <label tabindex="0" class="sao-tag sao-tag--small">
+    <img src="https://avatars.githubusercontent.com/u/49849883?v=4" alt="Avatar" />
+    <span>Label</span>
+    <i class="sao-icon sao-icon-filtered-action-3d-rotation"></i>
+  </label>
+  <label tabindex="0" class="sao-tag sao-tag--default">
+    <img src="https://avatars.githubusercontent.com/u/49849883?v=4" alt="Avatar" />
+    <span>Label</span>
+    <i class="sao-icon sao-icon-filtered-action-3d-rotation"></i>
+  </label>
+  <label tabindex="0" class="sao-tag sao-tag--large">
+    <img src="https://avatars.githubusercontent.com/u/49849883?v=4" alt="Avatar" />
+    <span>Label</span>
+    <i class="sao-icon sao-icon-filtered-action-3d-rotation"></i>
+  </label>
+  <ul class="sao-time-line">
+    <li class="sao-time-line-step sao-time-line-step--default">
+      <h6>Step 1</h6>
+      <p>31-12-2022</p>
+    </li>
+    <li class="sao-time-line-step sao-time-line-step--general">
+      <h6>Step 2</h6>
+      <p>31-12-2022</p>
+    </li>
+    <li class="sao-time-line-step sao-time-line-step--success">
+      <h6>Step 3</h6>
+      <p>31-12-2022</p>
+    </li>
+    <li class="sao-time-line-step sao-time-line-step--error">
+      <h6>Step 4</h6>
+      <p>31-12-2022</p>
+    </li>
+  </ul>
+  <article style="width: 500px" class="sao-alert sao-alert--neutral">
+    <main>
+      <h6>Title</h6>
+      <p>Flash message goes here</p>
+      <footer>
+        <a>Action</a>
+        <a>Action</a>
+      </footer>
+    </main>
+    <i class="sao-icon sao-icon-filtered-action-3d-rotation is-collapse"></i>
+  </article>
+  <article style="width: 500px" class="sao-alert sao-alert--neutral">
+    <p>Flash message goes here</p>
+    <i class="sao-icon sao-icon-filtered-action-3d-rotation is-close"></i>
+  </article>
+  <article style="width: 500px" class="sao-alert sao-alert--neutral">
+    <h6>Title</h6>
+    <i class="sao-icon sao-icon-filtered-action-3d-rotation is-close"></i>
+  </article>
+  <article style="width: 500px" class="sao-alert sao-alert--warning">
+    <main>
+      <h6>Title</h6>
+      <p>Flash message goes here</p>
+      <footer>
+        <a>Action</a>
+        <a>Action</a>
+      </footer>
+    </main>
+    <i class="sao-icon sao-icon-filtered-action-3d-rotation is-collapse"></i>
+  </article>
+  <article style="width: 500px" class="sao-alert sao-alert--warning">
+    <p>Flash message goes here</p>
+    <i class="sao-icon sao-icon-filtered-action-3d-rotation is-close"></i>
+  </article>
+  <article style="width: 500px" class="sao-alert sao-alert--warning">
+    <h6>Title</h6>
+    <i class="sao-icon sao-icon-filtered-action-3d-rotation is-close"></i>
+  </article>
+  <article style="width: 500px" class="sao-alert sao-alert--error">
+    <main>
+      <h6>Title</h6>
+      <p>Flash message goes here</p>
+      <footer>
+        <a>Action</a>
+        <a>Action</a>
+      </footer>
+    </main>
+    <i class="sao-icon sao-icon-filtered-action-3d-rotation is-collapse"></i>
+  </article>
+  <article style="width: 500px" class="sao-alert sao-alert--error">
+    <p>Flash message goes here</p>
+    <i class="sao-icon sao-icon-filtered-action-3d-rotation is-close"></i>
+  </article>
+  <article style="width: 500px" class="sao-alert sao-alert--error">
+    <h6>Title</h6>
+    <i class="sao-icon sao-icon-filtered-action-3d-rotation is-close"></i>
+  </article>
+  <article style="width: 500px" class="sao-alert sao-alert--success">
+    <main>
+      <h6>Title</h6>
+      <p>Flash message goes here</p>
+      <footer>
+        <a>Action</a>
+        <a>Action</a>
+      </footer>
+    </main>
+    <i class="sao-icon sao-icon-filtered-action-3d-rotation is-collapse"></i>
+  </article>
+  <article style="width: 500px" class="sao-alert sao-alert--success">
+    <p>Flash message goes here</p>
+    <i class="sao-icon sao-icon-filtered-action-3d-rotation is-close"></i>
+  </article>
+  <article style="width: 500px" class="sao-alert sao-alert--success">
+    <h6>Title</h6>
+    <i class="sao-icon sao-icon-filtered-action-3d-rotation is-close"></i>
+  </article>
+  <article style="width: 500px" class="sao-alert sao-alert--info">
+    <main>
+      <h6>Title</h6>
+      <p>Flash message goes here</p>
+      <footer>
+        <a>Action</a>
+        <a>Action</a>
+      </footer>
+    </main>
+    <i class="sao-icon sao-icon-filtered-action-3d-rotation is-collapse"></i>
+  </article>
+  <article style="width: 500px" class="sao-alert sao-alert--info">
+    <p>Flash message goes here</p>
+    <i class="sao-icon sao-icon-filtered-action-3d-rotation is-close"></i>
+  </article>
+  <article style="width: 500px" class="sao-alert sao-alert--info">
+    <h6>Title</h6>
+    <i class="sao-icon sao-icon-filtered-action-3d-rotation is-close"></i>
+  </article>
+  <section class="sao-drawer sao-drawer--small">
+    <header>
+      <h6 style="margin: 0; color: white">Header</h6>
+      <i class="sao-icon sao-icon-filtered-action-3d-rotation"></i>
+    </header>
+    <main>
+      <p style="margin: 0; color: white">Drawer content goes here</p>
+    </main>
+    <footer>
+      <button class="sao-button sao-button--default sao-button--primary">
+        <i class="sao-icon sao-icon-filtered-action-3d-rotation"></i>
+        Button
+      </button>
+      <button class="sao-button sao-button--default sao-button--success">
+        <i class="sao-icon sao-icon-filtered-action-3d-rotation"></i>
+        Button
+      </button>
+    </footer>
+  </section>
+  <section class="sao-modal" style="width: 384px;">
+    <aside>
+      <header>
+        <h5>Modal title</h5>
+        <i class="sao-icon sao-icon-filtered-action-3d-rotation"></i>
+      </header>
+      <main>
+        <p style="margin: 0; color: white">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tristique,
+          leo in pharetra ultrices, lorem nisl aliquam erat, sed vulputate sapien
+          nisl et augue. Nullam quis quam vel nibh tincidunt ultricies. Donec eget
+          lacus in augue semper cursus. Nullam consectetur, leo in pharetra
+          ultrices, lorem nisl aliquam erat, sed vulputate sapien nisl et augue.
+          Donec eget lacus in augue semper cursus. Nullam consectetur, leo in
+          pharetra ultrices, lorem nisl aliquam erat, sed vulputate sapien nisl et
+        </p>
+      </main>
+      <footer>
+        <button class="sao-button sao-button--default sao-button--primary">
+          <i class="sao-icon sao-icon-filtered-action-3d-rotation"></i>
+          Button
+        </button>
+        <button class="sao-button sao-button--default sao-button--success">
+          <i class="sao-icon sao-icon-filtered-action-3d-rotation"></i>
+          Button
+        </button>
+      </footer>
+    </aside>
+  </section>
+  @for (position of ['top-center', 'top-left', 'top-right', 'bottom-center', 'bottom-left', 'bottom-right', 'left', 'right']; track position) {
+    <article class="sao-popover sao-popover--{{position}}">
+
+    </article>
+  }
+  <article style="width: 440px" class="sao-notification sao-notification--vertical">
+    <i class="sao-icon sao-icon-filtered-action-3d-rotation is-main"></i>
+    <main>
+      <h6>Title</h6>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris.</p>
+      <footer>
+        <button class="sao-button sao-button--default sao-button--primary">
+          <i class="sao-icon sao-icon-filtered-action-3d-rotation"></i>
+          Button
+        </button>
+        <button class="sao-button sao-button--default sao-button--success">
+          <i class="sao-icon sao-icon-filtered-action-3d-rotation"></i>
+          Button
+        </button>
+      </footer>
+    </main>
+    <i class="sao-icon sao-icon-filtered-action-3d-rotation is-close"></i>
+  </article>
+  <article style="width: 440px" class="sao-notification sao-notification--horizontal">
+    <i class="sao-icon sao-icon-filtered-action-3d-rotation is-main"></i>
+    <main>
+      <h6>Title</h6>
+      <footer>
+        <button class="sao-button sao-button--default sao-button--primary">
+          <i class="sao-icon sao-icon-filtered-action-3d-rotation"></i>
+          Button
+        </button>
+        <button class="sao-button sao-button--default sao-button--success">
+          <i class="sao-icon sao-icon-filtered-action-3d-rotation"></i>
+          Button
+        </button>
+      </footer>
+    </main>
+    <i class="sao-icon sao-icon-filtered-action-3d-rotation is-close"></i>
+  </article>
+  @for (status of ['information', 'neutral', 'error', 'warning', 'success']; track status) {
+    <article style="width: 440px" class="sao-toast sao-toast--{{status}}">
+      <p>Toast message goes here</p>
+      <i class="sao-icon sao-icon-filtered-action-3d-rotation is-close"></i>
+    </article>
+  }
+  @for (position of ['top-center', 'top-left', 'top-right', 'bottom-center', 'bottom-left', 'bottom-right', 'left', 'right']; track position) {
+    <span class="sao-tooltip sao-tooltip--{{position}}">Tooltip</span>
+  }
+
+  <label class="sao-control">
+    <i class="sao-icon sao-icon-filtered-action-3d-rotation"></i>
+    <input placeholder="Placeholder..." class="sao-input" />
+    <i class="sao-icon sao-icon-filtered-action-3d-rotation"></i>
+  </label>
+  <label class="sao-control">
+    <i class="sao-icon sao-icon-filtered-action-3d-rotation"></i>
+    <textarea placeholder="Placeholder..." class="sao-input"></textarea>
+  </label>
+  <label class="sao-control sao-control--large">
+    <i class="sao-icon sao-icon-filtered-action-3d-rotation"></i>
+    <textarea placeholder="Placeholder..." class="sao-input"></textarea>
+  </label>
+
+  <label class="sao-control">
+    <i class="sao-icon sao-icon-filtered-action-3d-rotation"></i>
+    <input placeholder="Placeholder..." class="sao-input invalid" />
+    <i class="sao-icon sao-icon-filtered-action-3d-rotation"></i>
+  </label>
+  <label class="sao-control">
+    <i class="sao-icon sao-icon-filtered-action-3d-rotation"></i>
+    <textarea placeholder="Placeholder..." class="sao-input invalid"></textarea>
+  </label>
+
+  <label class="sao-control">
+    <i class="sao-icon sao-icon-filtered-action-3d-rotation"></i>
+    <input placeholder="Placeholder..." class="sao-input valid" />
+    <i class="sao-icon sao-icon-filtered-action-3d-rotation"></i>
+  </label>
+  <label class="sao-control">
+    <i class="sao-icon sao-icon-filtered-action-3d-rotation"></i>
+    <textarea placeholder="Placeholder..." class="sao-input valid"></textarea>
+  </label>
+
+  <label class="sao-control">
+    <i class="sao-icon sao-icon-filtered-action-3d-rotation"></i>
+    <input placeholder="Placeholder..." class="sao-input" disabled />
+    <i class="sao-icon sao-icon-filtered-action-3d-rotation"></i>
+  </label>
+  <label class="sao-control">
+    <i class="sao-icon sao-icon-filtered-action-3d-rotation"></i>
+    <textarea placeholder="Placeholder..." class="sao-input" disabled></textarea>
+  </label>
+
+  <label class="sao-upload-file-selecting">
+    <input type="file" />
+    <main>
+      <span>
+        <strong>Click to upload</strong> or drag and drop
+      </span>
+      <span>SVG, PNG, JPG or PDF (1mb max file size)</span>
+    </main>
+  </label>
+
+  <label class="sao-upload-file-selecting">
+    <input type="file" disabled />
+    <main>
+      <span>
+        <strong>Click to upload</strong> or drag and drop
+      </span>
+      <span>SVG, PNG, JPG or PDF (1mb max file size)</span>
+    </main>
+  </label>
+
+  <article style="width: 360px" class="sao-upload-file-selected">
+    <main>
+      <span>file name.pdf</span>
+      <span class="is-information">16 MB - 28% uploaded</span>
+    </main>
+    <i class="sao-icon sao-icon-filtered-action-3d-rotation"></i>
+  </article>
+
+  <article style="width: 360px" class="sao-upload-file-selected uploaded">
+    <main>
+      <span>file name.pdf</span>
+      <span class="is-information">16 MB - 28% uploaded</span>
+    </main>
+    <i class="sao-icon sao-icon-filtered-action-3d-rotation"></i>
+  </article>
+
+  <article style="width: 360px" class="sao-upload-file-selected has-error">
+    <main>
+      <span>file name.pdf</span>
+      <span class="is-information">16 MB - 28% uploaded</span>
+      <span class="is-error">Try again</span>
+    </main>
+    <i class="sao-icon sao-icon-filtered-action-3d-rotation"></i>
+  </article>
+  <label class="sao-toggle">
+    <input type="checkbox" />
+  </label>
+
+  <label class="sao-toggle">
+    <input type="checkbox" disabled />
+  </label>
+
+  <label class="sao-toggle sao-toggle--large">
+    <input type="checkbox" />
+  </label>
+
+  <label class="sao-toggle sao-toggle--large">
+    <input type="checkbox" disabled />
+  </label>
+
+  <label class="sao-checkbox">
+    <input type="checkbox" />
+  </label>
+
+  <label class="sao-checkbox sao-checkbox--small">
+    <input type="checkbox" />
+  </label>
+
+  <label class="sao-checkbox">
+    <input type="checkbox" disabled />
+  </label>
+
+  <label class="sao-checkbox sao-checkbox--small">
+    <input type="checkbox" disabled />
+  </label>
+
+  <label class="sao-checkbox">
+    <input type="checkbox" disabled checked />
+  </label>
+
+  <label class="sao-checkbox sao-checkbox--small">
+    <input type="checkbox" disabled checked />
+  </label>
+
+  <label class="sao-checkbox">
+    <input type="checkbox" class="is-indeterminate" />
+  </label>
+
+  <label class="sao-checkbox sao-checkbox--small">
+    <input type="checkbox" class="is-indeterminate" />
+  </label>
+
+  <label class="sao-checkbox">
+    <input type="checkbox" class="is-indeterminate" disabled />
+  </label>
+
+  <label class="sao-checkbox sao-checkbox--small">
+    <input type="checkbox" class="is-indeterminate" disabled />
+  </label>
+
+  <label class="sao-checkbox">
+    <input type="checkbox" class="is-indeterminate" disabled checked />
+  </label>
+
+  <label class="sao-checkbox sao-checkbox--small">
+    <input type="checkbox" class="is-indeterminate" disabled checked />
+  </label>
+
+  <section class="sao-slider-group" style="width: 50%;">
+    <article class="sao-slider-container" style="flex: 1 1 0;">
+      <span>0%</span>
+      <label class="sao-slider" style="flex: 1 1 0" [style.--sao-slider-value]="sliderValue()">
+        <input type="range" min="0" max="100" [(ngModel)]="sliderValue" />
+      </label>
+      <span>100%</span>
+    </article>
+    <label class="sao-control">
+      <input class="sao-input" type="number" min="0" max="100" [(ngModel)]="sliderValue" />
+    </label>
+  </section>
+
+  <span class="sao-mention">{{ '@Dang Vinh' }}</span>
+  <span class="sao-mention highlighted">{{ '@Dang Vinh' }}</span>
+  <span class="sao-mention no-access">{{ '@Dang Vinh' }}</span>
+
+  <ul class="sao-select" style="width: 300px; --sao-select-max-height: 200px;">
+    <li>
+      <span>Dang Vinh</span>
+      <i class="sao-icon sao-icon-filtered-action-3d-rotation"></i>
+    </li>
+    <li class="active">
+      <span><mark>Dan</mark>g Vinh</span>
+      <i class="sao-icon sao-icon-filtered-action-3d-rotation"></i>
+    </li>
+    <li>
+      <span>Dang Vinh</span>
+      <i class="sao-icon sao-icon-filtered-action-3d-rotation"></i>
+    </li>
+    <li class="active">
+      <span><mark>Dan</mark>g Vinh</span>
+      <i class="sao-icon sao-icon-filtered-action-3d-rotation"></i>
+    </li>
+    <li>
+      <span>Dang Vinh</span>
+      <i class="sao-icon sao-icon-filtered-action-3d-rotation"></i>
+    </li>
+    <li class="active">
+      <span><mark>Dan</mark>g Vinh</span>
+      <i class="sao-icon sao-icon-filtered-action-3d-rotation"></i>
+    </li>
+    <li>
+      <span>Dang Vinh</span>
+      <i class="sao-icon sao-icon-filtered-action-3d-rotation"></i>
+    </li>
+    <li class="active">
+      <span><mark>Dan</mark>g Vinh</span>
+      <i class="sao-icon sao-icon-filtered-action-3d-rotation"></i>
+    </li>
+    <li class="selected">
+      <aside>
+        <i class="sao-icon sao-icon-filtered-action-3d-rotation"></i>
+        <span>Dang Vinh</span>
+      </aside>
+      <i class="sao-icon sao-icon-filtered-action-3d-rotation"></i>
+    </li>
+    <li class="disabled">
+      <span><mark>Dan</mark>g Vinh</span>
+    </li>
+    <li class="disabled">
+      <aside>
+        <i class="sao-icon sao-icon-filtered-action-3d-rotation"></i>
+        <span><mark>Dan</mark>g Vinh</span>
+      </aside>
+      <i class="sao-icon sao-icon-filtered-action-3d-rotation"></i>
+    </li>
+  </ul>
+  <div class="sao-select" style="width: 300px; --sao-select-max-height: 200px;">
+    <div class="sao-select-item">
+      <span>Dang Vinh</span>
+      <i class="sao-icon sao-icon-filtered-action-3d-rotation"></i>
+    </div>
+    <div class="active sao-select-item">
+      <span><mark>Dan</mark>g Vinh</span>
+      <i class="sao-icon sao-icon-filtered-action-3d-rotation"></i>
+    </div>
+    <div class="sao-select-item">
+      <span>Dang Vinh</span>
+      <i class="sao-icon sao-icon-filtered-action-3d-rotation"></i>
+    </div>
+    <div class="active sao-select-item">
+      <span><mark>Dan</mark>g Vinh</span>
+      <i class="sao-icon sao-icon-filtered-action-3d-rotation"></i>
+    </div>
+    <div class="sao-select-item">
+      <span>Dang Vinh</span>
+      <i class="sao-icon sao-icon-filtered-action-3d-rotation"></i>
+    </div>
+    <div class="active sao-select-item">
+      <span><mark>Dan</mark>g Vinh</span>
+      <i class="sao-icon sao-icon-filtered-action-3d-rotation"></i>
+    </div>
+    <div class="sao-select-item">
+      <span>Dang Vinh</span>
+      <i class="sao-icon sao-icon-filtered-action-3d-rotation"></i>
+    </div>
+    <div class="active sao-select-item">
+      <span><mark>Dan</mark>g Vinh</span>
+      <i class="sao-icon sao-icon-filtered-action-3d-rotation"></i>
+    </div>
+    <div class="selected sao-select-item">
+      <aside>
+        <i class="sao-icon sao-icon-filtered-action-3d-rotation"></i>
+        <span>Dang Vinh</span>
+      </aside>
+      <i class="sao-icon sao-icon-filtered-action-3d-rotation"></i>
+    </div>
+    <div class="disabled sao-select-item">
+      <span><mark>Dan</mark>g Vinh</span>
+    </div>
+    <div class="disabled sao-select-item">
+      <aside>
+        <i class="sao-icon sao-icon-filtered-action-3d-rotation"></i>
+        <span><mark>Dan</mark>g Vinh</span>
+      </aside>
+      <i class="sao-icon sao-icon-filtered-action-3d-rotation"></i>
+    </div>
+  </div>
+  <div class="sao-star-group" [style.--sao-star-value]="4.2">
+    <span class="sao-star" [style.--sao-star-index]="1"></span>
+    <span class="sao-star" [style.--sao-star-index]="2"></span>
+    <span class="sao-star" [style.--sao-star-index]="3"></span>
+    <span class="sao-star" [style.--sao-star-index]="4"></span>
+    <span class="sao-star" [style.--sao-star-index]="5"></span>
+  </div>
+  <label class="sao-ratio sao-ratio--small">
+    <input type="radio" name="ratio" value="1:1">
+    <span>1:1 Small</span>
+  </label>
+  <label class="sao-ratio sao-ratio--small">
+    <input type="radio" name="ratio" value="16:9">
+    <span>16:9 Small</span>
+  </label>
+  <label class="sao-ratio sao-ratio--small">
+    <input type="radio" name="ratio" value="16:9" disabled>
+    <span>16:9 Small Disabled</span>
+  </label>
+  <label class="sao-ratio">
+    <input type="radio" name="ratio" value="1:1">
+    <span>1:1</span>
+  </label>
+  <label class="sao-ratio">
+    <input type="radio" name="ratio" value="16:9">
+    <span>16:9</span>
+  </label>
+  <label class="sao-ratio">
+    <input type="radio" name="ratio" value="16:9" disabled>
+    <span>16:9 Disabled</span>
+  </label>
+  <div style="width: 280px; display: flex; align-items: center">
+    <button class="sao-calendar-button in-range is-selected is-start">
+      <span>1</span>
+    </button>
+    <button class="sao-calendar-button in-range is-selected">
+      <span>2</span>
+    </button>
+    <button class="sao-calendar-button in-range is-selected">
+      <span>3</span>
+    </button>
+    <button class="sao-calendar-button in-range is-selected">
+      <span>4</span>
+    </button>
+    <button class="sao-calendar-button in-range is-selected is-end">
+      <span>5</span>
+    </button>
+    <button class="sao-calendar-button in-range is-current">
+      <span>6</span>
+    </button>
+    <button class="sao-calendar-button in-range">
+      <span>6</span>
+    </button>
+  </div>
+  <section class="sao-calendar-box sao-calendar-box--range">
+    <ul class="sao-calendar-options">
+      <li>Today</li>
+      <li>Yesterday</li>
+      <li>This week</li>
+      <li class="selected">Last week</li>
+      <li>This month</li>
+      <li>Last month</li>
+      <li>This year</li>
+      <li>Last year</li>
+      <li>All time</li>
+    </ul>
+    <aside>
+      <main>
+        <section class="sao-calendar-picker sao-calendar-picker--border-left">
+          <nav class="sao-calendar-navigation">
+            <button class="sao-button sao-button--small sao-button--ghost">
+              <i class="sao-icon sao-icon-filtered-navigation-arrow-back-ios"></i>
+            </button>
+            <span>January 2025</span>
+            <button class="sao-button sao-button--small sao-button--ghost">
+              <i class="sao-icon sao-icon-filtered-navigation-arrow-forward-ios"></i>
+            </button>
+          </nav>
+          <main class="sao-calendar-button-group">
+            <button class="sao-calendar-button is-label">
+              <span>Mo</span>
+            </button>
+            <button class="sao-calendar-button is-label">
+              <span>Tu</span>
+            </button>
+            <button class="sao-calendar-button is-label">
+              <span>We</span>
+            </button>
+            <button class="sao-calendar-button is-label">
+              <span>Th</span>
+            </button>
+            <button class="sao-calendar-button is-label">
+              <span>Fr</span>
+            </button>
+            <button class="sao-calendar-button is-label">
+              <span>Sa</span>
+            </button>
+            <button class="sao-calendar-button is-label">
+              <span>Su</span>
+            </button>
+            <button class="sao-calendar-button in-range">
+              <span>1</span>
+            </button>
+            <button class="sao-calendar-button in-range">
+              <span>2</span>
+            </button>
+            <button class="sao-calendar-button in-range">
+              <span>3</span>
+            </button>
+            <button class="sao-calendar-button in-range">
+              <span>4</span>
+            </button>
+            <button class="sao-calendar-button in-range">
+              <span>5</span>
+            </button>
+            <button class="sao-calendar-button in-range">
+              <span>6</span>
+            </button>
+            <button class="sao-calendar-button in-range">
+              <span>7</span>
+            </button>
+            <button class="sao-calendar-button in-range">
+              <span>8</span>
+            </button>
+            <button class="sao-calendar-button in-range">
+              <span>9</span>
+            </button>
+            <button class="sao-calendar-button in-range is-current">
+              <span>10</span>
+            </button>
+            <button class="sao-calendar-button in-range">
+              <span>11</span>
+            </button>
+            <button class="sao-calendar-button in-range is-selected is-start">
+              <span>12</span>
+            </button>
+            <button class="sao-calendar-button in-range is-selected">
+              <span>13</span>
+            </button>
+            <button class="sao-calendar-button in-range is-selected">
+              <span>14</span>
+            </button>
+            <button class="sao-calendar-button in-range is-selected">
+              <span>15</span>
+            </button>
+            <button class="sao-calendar-button in-range is-selected">
+              <span>16</span>
+            </button>
+            <button class="sao-calendar-button in-range is-selected">
+              <span>17</span>
+            </button>
+            <button class="sao-calendar-button in-range is-selected is-end">
+              <span>18</span>
+            </button>
+            <button class="sao-calendar-button in-range">
+              <span>19</span>
+            </button>
+            <button class="sao-calendar-button in-range">
+              <span>20</span>
+            </button>
+            <button class="sao-calendar-button in-range">
+              <span>21</span>
+            </button>
+            <button class="sao-calendar-button in-range">
+              <span>22</span>
+            </button>
+            <button class="sao-calendar-button in-range">
+              <span>23</span>
+            </button>
+            <button class="sao-calendar-button in-range">
+              <span>24</span>
+            </button>
+            <button class="sao-calendar-button in-range">
+              <span>25</span>
+            </button>
+            <button class="sao-calendar-button in-range">
+              <span>26</span>
+            </button>
+            <button class="sao-calendar-button in-range">
+              <span>27</span>
+            </button>
+            <button class="sao-calendar-button in-range">
+              <span>28</span>
+            </button>
+            <button class="sao-calendar-button in-range">
+              <span>29</span>
+            </button>
+            <button class="sao-calendar-button in-range">
+              <span>30</span>
+            </button>
+            <button class="sao-calendar-button in-range">
+              <span>31</span>
+            </button>
+            <button class="sao-calendar-button in-range" disabled>
+              <span>1</span>
+            </button>
+            <button class="sao-calendar-button in-range" disabled>
+              <span>2</span>
+            </button>
+            <button class="sao-calendar-button in-range" disabled>
+              <span>3</span>
+            </button>
+            <button class="sao-calendar-button in-range" disabled>
+              <span>4</span>
+            </button>
+            <button class="sao-calendar-button in-range" disabled>
+              <span>5</span>
+            </button>
+            <button class="sao-calendar-button in-range" disabled>
+              <span>6</span>
+            </button>
+            <button class="sao-calendar-button in-range" disabled>
+              <span>7</span>
+            </button>
+            <button class="sao-calendar-button in-range" disabled>
+              <span>8</span>
+            </button>
+            <button class="sao-calendar-button in-range" disabled>
+              <span>9</span>
+            </button>
+            <button class="sao-calendar-button in-range" disabled>
+              <span>10</span>
+            </button>
+            <button class="sao-calendar-button in-range" disabled>
+              <span>11</span>
+            </button>
+          </main>
+        </section>
+        <section class="sao-calendar-picker sao-calendar-picker--border-left">
+          <nav class="sao-calendar-navigation">
+            <button class="sao-button sao-button--small sao-button--ghost">
+              <i class="sao-icon sao-icon-filtered-navigation-arrow-back-ios"></i>
+            </button>
+            <span>February 2025</span>
+            <button class="sao-button sao-button--small sao-button--ghost">
+              <i class="sao-icon sao-icon-filtered-navigation-arrow-forward-ios"></i>
+            </button>
+          </nav>
+          <main class="sao-calendar-button-group">
+            <button class="sao-calendar-button is-label">
+              <span>Mo</span>
+            </button>
+            <button class="sao-calendar-button is-label">
+              <span>Tu</span>
+            </button>
+            <button class="sao-calendar-button is-label">
+              <span>We</span>
+            </button>
+            <button class="sao-calendar-button is-label">
+              <span>Th</span>
+            </button>
+            <button class="sao-calendar-button is-label">
+              <span>Fr</span>
+            </button>
+            <button class="sao-calendar-button is-label">
+              <span>Sa</span>
+            </button>
+            <button class="sao-calendar-button is-label">
+              <span>Su</span>
+            </button>
+            <button class="sao-calendar-button in-range" disabled>
+              <span>29</span>
+            </button>
+            <button class="sao-calendar-button in-range" disabled>
+              <span>30</span>
+            </button>
+            <button class="sao-calendar-button in-range" disabled>
+              <span>31</span>
+            </button>
+            <button class="sao-calendar-button in-range">
+              <span>1</span>
+            </button>
+            <button class="sao-calendar-button in-range">
+              <span>2</span>
+            </button>
+            <button class="sao-calendar-button in-range">
+              <span>3</span>
+            </button>
+            <button class="sao-calendar-button in-range">
+              <span>4</span>
+            </button>
+            <button class="sao-calendar-button in-range">
+              <span>5</span>
+            </button>
+            <button class="sao-calendar-button in-range">
+              <span>6</span>
+            </button>
+            <button class="sao-calendar-button in-range">
+              <span>7</span>
+            </button>
+            <button class="sao-calendar-button in-range">
+              <span>8</span>
+            </button>
+            <button class="sao-calendar-button in-range">
+              <span>9</span>
+            </button>
+            <button class="sao-calendar-button in-range">
+              <span>10</span>
+            </button>
+            <button class="sao-calendar-button in-range">
+              <span>11</span>
+            </button>
+            <button class="sao-calendar-button in-range">
+              <span>12</span>
+            </button>
+            <button class="sao-calendar-button in-range">
+              <span>13</span>
+            </button>
+            <button class="sao-calendar-button in-range">
+              <span>14</span>
+            </button>
+            <button class="sao-calendar-button in-range">
+              <span>15</span>
+            </button>
+            <button class="sao-calendar-button in-range">
+              <span>16</span>
+            </button>
+            <button class="sao-calendar-button in-range">
+              <span>17</span>
+            </button>
+            <button class="sao-calendar-button in-range">
+              <span>18</span>
+            </button>
+            <button class="sao-calendar-button in-range">
+              <span>19</span>
+            </button>
+            <button class="sao-calendar-button in-range">
+              <span>20</span>
+            </button>
+            <button class="sao-calendar-button in-range">
+              <span>21</span>
+            </button>
+            <button class="sao-calendar-button in-range">
+              <span>22</span>
+            </button>
+            <button class="sao-calendar-button in-range">
+              <span>23</span>
+            </button>
+            <button class="sao-calendar-button in-range">
+              <span>24</span>
+            </button>
+            <button class="sao-calendar-button in-range">
+              <span>25</span>
+            </button>
+            <button class="sao-calendar-button in-range">
+              <span>26</span>
+            </button>
+            <button class="sao-calendar-button in-range">
+              <span>27</span>
+            </button>
+            <button class="sao-calendar-button in-range">
+              <span>28</span>
+            </button>
+            <button class="sao-calendar-button in-range">
+              <span>29</span>
+            </button>
+            <button class="sao-calendar-button in-range" disabled>
+              <span>1</span>
+            </button>
+            <button class="sao-calendar-button in-range" disabled>
+              <span>2</span>
+            </button>
+            <button class="sao-calendar-button in-range" disabled>
+              <span>3</span>
+            </button>
+            <button class="sao-calendar-button in-range" disabled>
+              <span>4</span>
+            </button>
+            <button class="sao-calendar-button in-range" disabled>
+              <span>5</span>
+            </button>
+            <button class="sao-calendar-button in-range" disabled>
+              <span>6</span>
+            </button>
+            <button class="sao-calendar-button in-range" disabled>
+              <span>7</span>
+            </button>
+            <button class="sao-calendar-button in-range" disabled>
+              <span>8</span>
+            </button>
+            <button class="sao-calendar-button in-range" disabled>
+              <span>9</span>
+            </button>
+            <button class="sao-calendar-button in-range" disabled>
+              <span>10</span>
+            </button>
+          </main>
+        </section>
+      </main>
+      <footer class="sao-calendar-footer-action sao-calendar-footer-action--border-left">
+        <section class="sao-calendar-input-range" style="width: 304px;">
+          <label class="sao-control">
+            <input class="sao-input" value="Jan 12, 2024" />
+          </label>
+          <label class="sao-control">
+            <input class="sao-input" value="Jan 18, 2024" />
+          </label>
+        </section>
+        <section class="sao-calendar-footer-submit">
+          <button class="sao-button sao-button--default sao-button--secondary">
+            Cancel
+          </button>
+          <button class="sao-button sao-button--default sao-button--primary">
+            Apply
+          </button>
+        </section>
+      </footer>
+    </aside>
+  </section>
+  <section class="sao-calendar-box sao-calendar-box--single">
+    <section class="sao-calendar-picker">
+      <nav class="sao-calendar-navigation">
+        <button class="sao-button sao-button--small sao-button--ghost">
+          <i class="sao-icon sao-icon-filtered-navigation-arrow-back-ios"></i>
+        </button>
+        <span>January 2025</span>
+        <button class="sao-button sao-button--small sao-button--ghost">
+          <i class="sao-icon sao-icon-filtered-navigation-arrow-forward-ios"></i>
+        </button>
+      </nav>
+      <section class="sao-calendar-input-action">
+        <a class="sao-link">
+          Last week
+        </a>
+        <a class="sao-link">
+          Last month
+        </a>
+        <a class="sao-link">
+          Last year
+        </a>
+      </section>
+      <main class="sao-calendar-button-group">
+        <button class="sao-calendar-button is-label">
+          <span>Mo</span>
+        </button>
+        <button class="sao-calendar-button is-label">
+          <span>Tu</span>
+        </button>
+        <button class="sao-calendar-button is-label">
+          <span>We</span>
+        </button>
+        <button class="sao-calendar-button is-label">
+          <span>Th</span>
+        </button>
+        <button class="sao-calendar-button is-label">
+          <span>Fr</span>
+        </button>
+        <button class="sao-calendar-button is-label">
+          <span>Sa</span>
+        </button>
+        <button class="sao-calendar-button is-label">
+          <span>Su</span>
+        </button>
+        <button class="sao-calendar-button in-range">
+          <span>1</span>
+        </button>
+        <button class="sao-calendar-button in-range">
+          <span>2</span>
+        </button>
+        <button class="sao-calendar-button in-range">
+          <span>3</span>
+        </button>
+        <button class="sao-calendar-button in-range">
+          <span>4</span>
+        </button>
+        <button class="sao-calendar-button in-range">
+          <span>5</span>
+        </button>
+        <button class="sao-calendar-button in-range">
+          <span>6</span>
+        </button>
+        <button class="sao-calendar-button in-range">
+          <span>7</span>
+        </button>
+        <button class="sao-calendar-button in-range">
+          <span>8</span>
+        </button>
+        <button class="sao-calendar-button in-range">
+          <span>9</span>
+        </button>
+        <button class="sao-calendar-button in-range is-current">
+          <span>10</span>
+        </button>
+        <button class="sao-calendar-button in-range">
+          <span>11</span>
+        </button>
+        <button class="sao-calendar-button in-range is-selected is-start">
+          <span>12</span>
+        </button>
+        <button class="sao-calendar-button in-range is-selected">
+          <span>13</span>
+        </button>
+        <button class="sao-calendar-button in-range is-selected">
+          <span>14</span>
+        </button>
+        <button class="sao-calendar-button in-range is-selected">
+          <span>15</span>
+        </button>
+        <button class="sao-calendar-button in-range is-selected">
+          <span>16</span>
+        </button>
+        <button class="sao-calendar-button in-range is-selected">
+          <span>17</span>
+        </button>
+        <button class="sao-calendar-button in-range is-selected is-end">
+          <span>18</span>
+        </button>
+        <button class="sao-calendar-button in-range">
+          <span>19</span>
+        </button>
+        <button class="sao-calendar-button in-range">
+          <span>20</span>
+        </button>
+        <button class="sao-calendar-button in-range">
+          <span>21</span>
+        </button>
+        <button class="sao-calendar-button in-range">
+          <span>22</span>
+        </button>
+        <button class="sao-calendar-button in-range">
+          <span>23</span>
+        </button>
+        <button class="sao-calendar-button in-range">
+          <span>24</span>
+        </button>
+        <button class="sao-calendar-button in-range">
+          <span>25</span>
+        </button>
+        <button class="sao-calendar-button in-range">
+          <span>26</span>
+        </button>
+        <button class="sao-calendar-button in-range">
+          <span>27</span>
+        </button>
+        <button class="sao-calendar-button in-range">
+          <span>28</span>
+        </button>
+        <button class="sao-calendar-button in-range">
+          <span>29</span>
+        </button>
+        <button class="sao-calendar-button in-range">
+          <span>30</span>
+        </button>
+        <button class="sao-calendar-button in-range">
+          <span>31</span>
+        </button>
+        <button class="sao-calendar-button in-range" disabled>
+          <span>1</span>
+        </button>
+        <button class="sao-calendar-button in-range" disabled>
+          <span>2</span>
+        </button>
+        <button class="sao-calendar-button in-range" disabled>
+          <span>3</span>
+        </button>
+        <button class="sao-calendar-button in-range" disabled>
+          <span>4</span>
+        </button>
+        <button class="sao-calendar-button in-range" disabled>
+          <span>5</span>
+        </button>
+        <button class="sao-calendar-button in-range" disabled>
+          <span>6</span>
+        </button>
+        <button class="sao-calendar-button in-range" disabled>
+          <span>7</span>
+        </button>
+        <button class="sao-calendar-button in-range" disabled>
+          <span>8</span>
+        </button>
+        <button class="sao-calendar-button in-range" disabled>
+          <span>9</span>
+        </button>
+        <button class="sao-calendar-button in-range" disabled>
+          <span>10</span>
+        </button>
+        <button class="sao-calendar-button in-range" disabled>
+          <span>11</span>
+        </button>
+      </main>
+    </section>
+    <footer class="sao-calendar-footer-action">
+      <button class="sao-button sao-button--default sao-button--secondary" style="flex: 1 1 0">
+        Cancel
+      </button>
+      <button class="sao-button sao-button--default sao-button--primary" style="flex: 1 1 0">
+        Apply
+      </button>
+    </footer>
+  </section>
+
+  <section class="sao-calendar-box sao-calendar-box--single">
+    <section class="sao-calendar-picker">
+      <nav class="sao-calendar-navigation">
+        <button class="sao-button sao-button--small sao-button--ghost">
+          <i class="sao-icon sao-icon-filtered-navigation-arrow-back-ios"></i>
+        </button>
+        <span>January 2025</span>
+        <button class="sao-button sao-button--small sao-button--ghost">
+          <i class="sao-icon sao-icon-filtered-navigation-arrow-forward-ios"></i>
+        </button>
+      </nav>
+      <section class="sao-calendar-input-single">
+        <label class="sao-control" style="flex: 1 1 0">
+          <input class="sao-input" value="Jan 12, 2024" />
+        </label>
+        <button class="sao-button sao-button--default sao-button--secondary">
+          Today
+        </button>
+      </section>
+      <main class="sao-calendar-button-group">
+        <button class="sao-calendar-button is-label">
+          <span>Mo</span>
+        </button>
+        <button class="sao-calendar-button is-label">
+          <span>Tu</span>
+        </button>
+        <button class="sao-calendar-button is-label">
+          <span>We</span>
+        </button>
+        <button class="sao-calendar-button is-label">
+          <span>Th</span>
+        </button>
+        <button class="sao-calendar-button is-label">
+          <span>Fr</span>
+        </button>
+        <button class="sao-calendar-button is-label">
+          <span>Sa</span>
+        </button>
+        <button class="sao-calendar-button is-label">
+          <span>Su</span>
+        </button>
+        <button class="sao-calendar-button">
+          <span>1</span>
+        </button>
+        <button class="sao-calendar-button">
+          <span>2</span>
+        </button>
+        <button class="sao-calendar-button">
+          <span>3</span>
+        </button>
+        <button class="sao-calendar-button">
+          <span>4</span>
+        </button>
+        <button class="sao-calendar-button">
+          <span>5</span>
+        </button>
+        <button class="sao-calendar-button">
+          <span>6</span>
+        </button>
+        <button class="sao-calendar-button">
+          <span>7</span>
+        </button>
+        <button class="sao-calendar-button">
+          <span>8</span>
+        </button>
+        <button class="sao-calendar-button">
+          <span>9</span>
+        </button>
+        <button class="sao-calendar-button is-current">
+          <span>10</span>
+        </button>
+        <button class="sao-calendar-button">
+          <span>11</span>
+        </button>
+        <button class="sao-calendar-button">
+          <span>12</span>
+        </button>
+        <button class="sao-calendar-button">
+          <span>13</span>
+        </button>
+        <button class="sao-calendar-button">
+          <span>14</span>
+        </button>
+        <button class="sao-calendar-button">
+          <span>15</span>
+        </button>
+        <button class="sao-calendar-button">
+          <span>16</span>
+        </button>
+        <button class="sao-calendar-button is-selected">
+          <span>17</span>
+        </button>
+        <button class="sao-calendar-button">
+          <span>18</span>
+        </button>
+        <button class="sao-calendar-button">
+          <span>19</span>
+        </button>
+        <button class="sao-calendar-button">
+          <span>20</span>
+        </button>
+        <button class="sao-calendar-button">
+          <span>21</span>
+        </button>
+        <button class="sao-calendar-button">
+          <span>22</span>
+        </button>
+        <button class="sao-calendar-button">
+          <span>23</span>
+        </button>
+        <button class="sao-calendar-button">
+          <span>24</span>
+        </button>
+        <button class="sao-calendar-button">
+          <span>25</span>
+        </button>
+        <button class="sao-calendar-button">
+          <span>26</span>
+        </button>
+        <button class="sao-calendar-button">
+          <span>27</span>
+        </button>
+        <button class="sao-calendar-button">
+          <span>28</span>
+        </button>
+        <button class="sao-calendar-button">
+          <span>29</span>
+        </button>
+        <button class="sao-calendar-button">
+          <span>30</span>
+        </button>
+        <button class="sao-calendar-button">
+          <span>31</span>
+        </button>
+        <button class="sao-calendar-button" disabled>
+          <span>1</span>
+        </button>
+        <button class="sao-calendar-button" disabled>
+          <span>2</span>
+        </button>
+        <button class="sao-calendar-button" disabled>
+          <span>3</span>
+        </button>
+        <button class="sao-calendar-button" disabled>
+          <span>4</span>
+        </button>
+        <button class="sao-calendar-button" disabled>
+          <span>5</span>
+        </button>
+        <button class="sao-calendar-button" disabled>
+          <span>6</span>
+        </button>
+        <button class="sao-calendar-button" disabled>
+          <span>7</span>
+        </button>
+        <button class="sao-calendar-button" disabled>
+          <span>8</span>
+        </button>
+        <button class="sao-calendar-button" disabled>
+          <span>9</span>
+        </button>
+        <button class="sao-calendar-button" disabled>
+          <span>10</span>
+        </button>
+        <button class="sao-calendar-button" disabled>
+          <span>11</span>
+        </button>
+      </main>
+    </section>
+    <footer class="sao-calendar-footer-action">
+      <button class="sao-button sao-button--default sao-button--secondary" style="flex: 1 1 0">
+        Cancel
+      </button>
+      <button class="sao-button sao-button--default sao-button--primary" style="flex: 1 1 0">
+        Apply
+      </button>
+    </footer>
+  </section>
+</div>

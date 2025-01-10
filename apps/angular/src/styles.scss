@@ -1,1 +1,17 @@
-/* You can add global styles to this file, and also import other style files */
+@use '@fontsource/work-sans';
+@use '@sao-icons/core' as icons;
+@use '@sao-typography/core/mixins' as typography;
+@use '@sao-palette/core/mixins' as palette;
+@use '@sao-components/core/forwards' as components;
+
+:root,
+::before,
+::after {
+  @include typography.sao-setup-typography();
+  @include palette.sao-setup-palette();
+}
+
+*, ::before, ::after {
+  box-sizing: border-box;
+}
+
